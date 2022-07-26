@@ -15,7 +15,9 @@ function search() {
     searchValue +
     "&apikey=331a8e964a4e496298bdfa8a074e7db6";
 
-  fetch(characterURL);
+  fetch(characterURL)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
 }
 
 submitBtn.addEventListener("click", search);
